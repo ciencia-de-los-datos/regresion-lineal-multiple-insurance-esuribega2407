@@ -26,15 +26,14 @@ def pregunta_01():
         decimal='.')
 
     # Asigne la columna `charges` a la variable `y`.
-   # ____ = ____
     y = df['charges']
 
     # Asigne una copia del dataframe `df` a la variable `X`.
-    #____ = ____.____(____)
+
     X = df.copy()
 
     # Remueva la columna `charges` del DataFrame `X`.
-    #____.____(____)
+
     X.drop('charges', axis=1, inplace=True)
 
     # Retorne `X` y `y`
@@ -56,12 +55,6 @@ def pregunta_02():
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 12345. Use 300 patrones para la muestra de prueba.
-    #(X_train, X_test, y_train, y_test,) = ____(
-    #    ____,
-    #    ____,
-    #    test_size=____,
-    #    random_state=____,
-    #)
 
     (X_train, X_test, y_train, y_test,) = train_test_split(
         X,
@@ -70,7 +63,6 @@ def pregunta_02():
         random_state=12345,
     )
 
-    # Retorne `X_train`, `X_test`, `y_train` y `y_test`
     return X_train, X_test, y_train, y_test
 
 
@@ -175,9 +167,7 @@ def pregunta_04():
     X_train, X_test, y_train, y_test = pregunta_02()
 
     # Evalúe el modelo con los conjuntos de entrenamiento y prueba.
-    #y_train_pred = ____.____(____)
-    #y_test_pred = ____.____(____)
-
+   
     y_train_pred = gridSearchCV.predict(X_train)
     y_test_pred = gridSearchCV.predict(X_test)
 
